@@ -1,0 +1,163 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="Fundacion" content="">
+    <meta name="description" content="">
+    <meta name="Grupo 10" content="">
+    <title>BLOG | {% block titulo%}{% endblock titulo%}</title>
+
+
+	                                   <!-- Estilos -->
+	<!-- Iconos -->
+	<link rel="shortcut icon" href="{% static 'img/logoPestania.ico' %}" type="image/x-icon" />
+	<link rel="apple-touch-icon" href="{% static 'img/apple-touch-icon.png' %}">
+	<!-- Tipo de fuente -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+	<!-- Bootstrap CSS -->
+	<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+	<!-- Diseño custom para este template -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <!-- Colores del template -->
+    <link href="{% static 'css/colors.css' %}" rel= "stylesheet" type="text/css">
+    
+    <!-- Diseño responsive para el template -->
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+    <!-- FontAwesome Iconos de redes -->
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+
+    <!-- version Marketing (estructura) -->
+    <link href="{% static 'css/version/marketing.css' %}" rel="stylesheet">
+
+</head>
+<body class="contenedor">
+	<div id="wrapper">
+        <header class="market-header header">
+            <div class="container-fluid">
+                <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" href="marketing-index.html"><img src="{% static 'img/logoAmarillo.png' %}" alt="logo" width="50px"></a>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'home' %}">INICIO</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'nosotros' %}">NOSOTROS</a>
+                                
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'noticias:listar' %}">NOTICIAS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'mision' %}">MISION</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'galeria' %}">GALERIA</a>
+                            </li>
+
+                            {% if user.is_authenticated %}
+								<strong class="nav-link">Hola {{ user.username }}</strong>
+								<li class="nav-item">
+									<a class="nav-link" href="{% url 'logout' %}">Cerrar sesion</a>
+								</li>
+							{% else %}
+								<li class="nav-item">
+									<li>
+										<a class="nav-link" href="{% url 'login' %}">Iniciar sesion</a>
+									</li>
+									<li>
+										<a class="nav-link" href="{% url 'usuarios:registro' %}">Registrar</a>
+									</li>
+								</li>	
+							{% endif %}
+
+                        </ul>
+                        <form class="form-inline">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Que buscas?">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                        </form>
+                    </div>
+                </nav>
+            </div><!-- end container-fluid -->
+        </header><!-- end market-header -->
+
+
+        <div class="page-title db">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                        <h2 id="titulo"> {%block titulo_cabecera%} {%endblock titulo_cabecera%} <small class="hidden-xs-down hidden-sm-down">{%block descripcion%}{%endblock descripcion%}</small></h2>
+                    </div><!-- end col -->
+                    <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
+                        <div class="breadcrumb">
+                            <img src="{% static 'img/logo_horizontal.png' %}" width="300px">
+                        </div>
+                    </div><!-- end col -->                    
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </div><!-- end page-title -->
+
+
+
+    	{%block contenido%}
+
+        {%endblock contenido%}
+    		
+            
+		
+			
+
+        
+
+        <footer class="footer">
+            <div class="grupo-1">
+                <div class="box">
+                    <figure>
+                        <a href="{% url 'home' %}">
+                            <img src="{% static 'img/logo_chico.png' %}" alt="logoFundacion">
+                        </a> 
+                    </figure>
+                </div>
+                <div class="box">
+                    <h2>CONTACTANOS</h2>
+                    <p><b>Correo:</b> info@amigosdelarteyturismo.org</p>
+                    <p><b>Direccion:</b><br>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d896.9209838284005!2d-60.6207856!3d-25.9456008!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94404cfba5224f0b%3A0xbe1797f5f1777f83!2sFundaci%C3%B3n%20Amigos%20del%20Arte%20y%20Turismo!5e0!3m2!1ses!2sar!4v1670352678673!5m2!1ses!2sar" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </p>
+                    
+                </div>
+                <div class="box">
+                    <h2>SEGUINOS</h2>
+                    <div class="red-social">
+                        <a href="https://www.facebook.com/FundacionAmigosdelArte/" class="fa fa-facebook" target="_blank"></a>
+                        <a href="https://www.instagram.com/fundacion__amigos/" class="fa fa-instagram" target="_blank"></a> <br>
+                        <small><b>Seguinos tambien en "Escultores en el impenetrable"</small></b><br>
+                        <a href="https://www.facebook.com/EscultoresenelImpenetrable/" class="fa fa-facebook" target="_blank"></a>                        
+                    </div>
+                </div>
+            </div>
+            <div class="grupo-2">
+                <small>&copy; 2022 <b>- Grupo 10</b> - Todos los Derechos Reservados.</small>
+            </div>
+
+
+        </footer><!-- end footer -->
+
+      
+        
+    </div><!-- end wrapper -->
+    <script src=" {% static 'js/jquery.min.js' %}"></script>
+    <script src=" {% static 'js/tether.min.js' %}"></script>
+    <script src=" {% static 'js/bootstrap.min.js' %}"></script>
+    <script src=" {% static 'js/animate.js' %}"></script>
+    <script src=" {% static 'js/custom.js' %}"></script>
+    <script src=" {% static 'js/script.js' %}"></script>
+</body>
+</html>

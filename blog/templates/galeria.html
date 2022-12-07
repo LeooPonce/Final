@@ -1,0 +1,39 @@
+{%extends 'base.html' %}
+{% load static %}
+
+{% block titulo%} Galeria {% endblock titulo %}
+
+{%block titulo_cabecera%} GALERIA {%endblock titulo_cabecera%}
+{%block descripcion%}Observa nuestros mejores momentos{%endblock descripcion%}
+
+{% block contenido%}
+<div class="container">
+    <div class="row">
+        <div class="page-wrapper">
+            <div class="ful-img" id="fullImgBox">
+                <img src="{% static 'img/1.jpg' %}" id="fullImg" alt="">
+                <span onclick="closeImg()">X</span>
+            </div>
+
+            <h3><span>Galeria</span></h3>
+            <div class="secc-galeria">
+                <b><a href="{% url 'galeria' %}">Todas las fotos</a></b>
+                <b><a href="{% url 'esculturas' %}">Esculturas</a></b>
+                <b><a href="{% url 'escultores' %}">Escultores</a></b>
+            </div>
+            <div class="img-gallery">
+                <img src="{% static 'img/1.jpg' %}" onclick="openFullImg(this.src)" alt="">
+                <img src="{% static 'img/2.jpg' %}" onclick="openFullImg(this.src)" alt="">
+                <img src="{% static 'img/3.jpg' %}" onclick="openFullImg(this.src)" alt="">
+                <img src="{% static 'img/4.jpg' %}" onclick="openFullImg(this.src)" alt="">
+                <img src="{% static 'img/5.jpg' %}"onclick="openFullImg(this.src)"  alt="">
+                <img src="{% static 'img/6.jpg' %}" onclick="openFullImg(this.src)" alt="">
+                <img src="{% static 'img/7.jpg' %}" onclick="openFullImg(this.src)" alt="">
+                <img src="{% static 'img/8.jpg' %}" onclick="openFullImg(this.src)" alt="">
+            </div>
+            
+
+        </div>
+    </div>     
+</div>
+{% endblock contenido%}

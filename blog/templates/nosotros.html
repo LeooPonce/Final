@@ -1,0 +1,26 @@
+{%extends 'base.html' %}
+{% load static %}
+
+{% block titulo%} NOSOTROS {% endblock titulo %}
+
+{%block titulo_cabecera%} Nosotros {%endblock titulo_cabecera%}
+{%block descripcion%}Mira la conformacion actual de la Fundación{%endblock descripcion%}
+
+
+{% block contenido%}
+	<div class="container">
+    	<div class="row">
+       		<div class="page-wrapper">
+			    <h2>Conformación actual de la comisión</h2>
+			<p>
+			<b>Presidente:</b> DG. Rene Bertolucci<br>
+			<b>Vicepresidente:</b> Arq. Yolanda M. Rausch<br>
+			<b>Secretaria:</b> Prof. Marisa Santamaría<br>
+			<b>Tesorera:</b> Prof. Elena Díaz de Lázara<br>
+			<b>Vocal:</b> Dr. Jorge Kleisinger<br>
+			</p>
+			<img src="{% static 'img/actual.jpg' %}" alt="Conformación actual">
+			</div>
+		</div>
+	</div>
+{% endblock contenido%}

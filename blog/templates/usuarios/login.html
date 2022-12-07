@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+		<div class="container">
+   		<div class="row">
+        <div class="page-wrapper">
+			<form method="POST">{%csrf_token%}
+				{{form.errors}}
+				<input type="text" name="username" placeholder="Usuario">
+				<input type="password" name="password" placeholder="Contraseña"><br>
+
+				<input type="submit" name="" value="Enviar">
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}
