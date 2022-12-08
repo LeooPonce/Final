@@ -15,21 +15,45 @@
                 <span onclick="closeImg()">X</span>
             </div>
 
-            <h3><span>Galeria</span></h3>
+            <h3><span>Esculturas</span></h3>
             <div class="secc-galeria">
                 <b><a href="{% url 'galeria' %}">Todas las fotos</a></b>
                 <b><a href="{% url 'esculturas' %}">Esculturas</a></b>
                 <b><a href="{% url 'escultores' %}">Escultores</a></b>
             </div>
             <div class="img-gallery">
-                <img src="{% static 'img/1.jpg' %}" onclick="openFullImg(this.src)" alt="">
-                <img src="{% static 'img/2.jpg' %}" onclick="openFullImg(this.src)" alt="">
-                <img src="{% static 'img/3.jpg' %}" onclick="openFullImg(this.src)" alt="">
-                <img src="{% static 'img/4.jpg' %}" onclick="openFullImg(this.src)" alt="">
-                <img src="{% static 'img/5.jpg' %}"onclick="openFullImg(this.src)"  alt="">
-                <img src="{% static 'img/6.jpg' %}" onclick="openFullImg(this.src)" alt="">
-                <img src="{% static 'img/7.jpg' %}" onclick="openFullImg(this.src)" alt="">
-                <img src="{% static 'img/8.jpg' %}" onclick="openFullImg(this.src)" alt="">
+               <div class="card">
+                    <img src="{% static 'img/1.jpg' %}" onclick="openFullImg(this.src)" alt="">
+                    <p>Descripcion de la foto</p>
+                </div>
+                <div class="card">
+                    <img src="{% static 'img/2.jpg' %}" onclick="openFullImg(this.src)" alt="">
+                    <p>Descripcion de la foto</p>
+                </div>
+                <div class="card">
+                    <img src="{% static 'img/3.jpg' %}" onclick="openFullImg(this.src)" alt="">
+                    <p>Descripcion de la foto</p>
+                </div>
+                <div class="card">
+                    <img src="{% static 'img/4.jpg' %}" onclick="openFullImg(this.src)" alt="">
+                    <p>Descripcion de la foto o titulo</p>
+                </div>
+                <div class="card">
+                 <img src="{% static 'img/5.jpg' %}" onclick="openFullImg(this.src)" alt="">
+                 <p>Descripcion de la foto</p>
+                </div>
+                <div class="card">
+                    <img src="{% static 'img/6.jpg' %}" onclick="openFullImg(this.src)" alt="">
+                    <p>Descripcion de la foto</p>
+                </div>
+                <div class="card">
+                    <img src="{% static 'img/7.jpg' %}" onclick="openFullImg(this.src)" alt="">
+                    <p>Descripcion de la foto</p>
+                </div>
+                <div class="card">
+                    <img src="{% static 'img/8.jpg' %}" onclick="openFullImg(this.src)" alt="">
+                    <p>Descripcion de la foto</p>
+                </div>
             </div>
             
 

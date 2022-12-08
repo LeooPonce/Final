@@ -437,9 +437,21 @@ div.tab button:hover {
     transition: 1s;
 }
 
-.container .row .page-wrapper .img-gallery img:hover{
+
+
+.container .row .page-wrapper .img-gallery .card{
+    transition: 1s;
+}
+.container .row .page-wrapper .img-gallery .card:hover{
     transform: scale(1.2);
+    transition: 1s;
     box-shadow: 5px 5px 10px black;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.container .row .page-wrapper .img-gallery .card p{
+    text-align: center;
 }
 
 .container .row .page-wrapper .ful-img{
@@ -456,6 +468,7 @@ div.tab button:hover {
 }
 
 .container .row .page-wrapper .ful-img img{
+    
     height: 100%;
     max-height: 600px;
     max-width: 600px;
@@ -468,12 +481,16 @@ div.tab button:hover {
     font-size: 30px;
     color: #fff;
     cursor: pointer;
+
 }
 
 .container .row .page-wrapper .secc-galeria{
     display: flex;
     justify-content: space-around;
 }
+
+
+
 /* Fin Galeria
 **************************************/
 
