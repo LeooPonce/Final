@@ -27,6 +27,7 @@ urlpatterns = [
     path('Galeria/',views.Galeria, name = 'galeria'),
     path('Esculturas/', views.Esculturas, name = 'esculturas'),
     path('Escultores/',views.Escultores, name = 'escultores'),
+    path('Mostrar_Noticias/', views.MostrarNoticias, name = 'mostrar'),
 
 
 #   NO OLVIDAR COMA AL FINAL DE CADA URL, ES UNA TUPLA
