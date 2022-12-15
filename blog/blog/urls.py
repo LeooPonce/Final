@@ -18,6 +18,9 @@ from django.urls import path, include
 from . import views
 from django.contrib.auth import views as auth
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,7 +30,6 @@ urlpatterns = [
     path('Galeria/',views.Galeria, name = 'galeria'),
     path('Esculturas/', views.Esculturas, name = 'esculturas'),
     path('Escultores/',views.Escultores, name = 'escultores'),
-    path('Mostrar_Noticias/', views.MostrarNoticias, name = 'mostrar'),
 
 
 #   NO OLVIDAR COMA AL FINAL DE CADA URL, ES UNA TUPLA
@@ -46,4 +48,4 @@ urlpatterns = [
 
 
     
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

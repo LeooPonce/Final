@@ -19,6 +19,3 @@ def Esculturas(request):
 
 def Escultores(request):
 	return render(request, 'galeriaEscultores.html')
-
-def MostrarNoticias(request):
-	return render(request, 'listado_noticias.html')
