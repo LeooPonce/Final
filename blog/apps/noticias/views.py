@@ -1,10 +1,8 @@
 from django.shortcuts import render, redirect
-
 from django.contrib.auth.decorators import login_required
-
 from .models import Noticia, Categoria, Comentario
-
 from django.urls import reverse_lazy
+
 
 @login_required
 def Listar_Noticias(request):
@@ -24,6 +22,8 @@ def Listar_Noticias(request):
 
 	return render(request, 'noticias/listar.html', contexto)
 
+
+
 @login_required
 def Detalle_Noticias(request, pk):
 	contexto = {}
@@ -35,6 +35,7 @@ def Detalle_Noticias(request, pk):
 	contexto['comentarios'] = c
 
 	return render(request, 'noticias/detalle.html',contexto)
+
 
 
 @login_required

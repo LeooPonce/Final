@@ -2,30 +2,42 @@
 {% load static %}
 
 {% block titulo %}NOTICIAS{% endblock titulo %}
-
+{%block titulo_cabecera%} NOTICIAS {%endblock titulo_cabecera%}
+{%block descripcion%}Enterate de todo lo referido al arte y turismo en el impenetrable{%endblock descripcion%}
 
 {% block contenido %}
-    <h1>ACA VOY A DETALLAR UNA NOTICIA</h1>
-        <img src="{{noticia.imagen.url}}" width="500" height="500">
-        
-        <p>TITULO: {{noticia.titulo}}</p>
-        
-        <p>FECHA: {{noticia.fecha}}</p>
-        <p>CATEGORIA: {{noticia.categoria_noticia}}</p>
-        <p>CUERPO: {{noticia.cuerpo}}</p>
-        <br><br>
-        <br>
-        <form method="POST" action="{% url 'noticias:comentar' %}">{% csrf_token %}
-            <textarea name="comentario" maxlength="1500"> </textarea>
-            <input type="text" name="id_noticia" value="{{noticia.pk}}" hidden=""> 
-            <input type="submit" value="GUARDAR">
-        </form>
-        <br><br><br>
-        <h3>COMENTARIOS</h3>
-        {% for com in comentarios %}
-        <strong>FECHA:{{com.fecha}}</strong><br>
-        <strong>USUARIO:{{com.usuario}}</strong><br>
-        <p>{{com.texto}}</p>
-        {% endfor %}
-        <a href="{% url 'noticias:listar' %}">VOLVER</a>
+<div class="container">
+    <div class="row">
+        <div class="page-wrapper">
+            <div class="detalle">
+            <h3>{{noticia.titulo}}</h3>
+            <img src="{{noticia.imagen.url}}" width="60%">
+            
+            <p><small> Fecha de publicación: {{noticia.fecha}}</small><br>
+            <small> Categoria: {{noticia.categoria_noticia}}</small></p>
+            
+            <p>{{noticia.cuerpo}}</p>
+            <br><br><br>
+            <form method="POST" action="{% url 'noticias:comentar' %}">{% csrf_token %}
+                <fieldset>
+                    <legend><b>Dejanos tu opinion!</b></legend>
+                    <textarea name="comentario" maxlength="1500"> </textarea>
+                    <input type="text" name="id_noticia" value="{{noticia.pk}}" hidden=""><br>
+                    <input type="submit" value="Comentar">
+                </fieldset>
+            </form>
+            <br><br><br>
+            <h3>COMENTARIOS</h3>
+            {% for com in comentarios %}
+            <div class="comentario">
+            <p><strong>Usuario:</strong> {{com.usuario}}<br>
+            <strong>Comentario:</strong> {{com.texto}}<br>
+            <small><strong>Fecha:</strong> {{com.fecha}}</small></p>
+            </div>
+            {% endfor %}
+            <a href="{% url 'noticias:listar' %}"><b>VOLVER</b></a>
+         </div>
+         </div>
+    </div>
+</div>
 {% endblock contenido %}

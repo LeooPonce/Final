@@ -44,42 +44,42 @@
                     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a class="navbar-brand" href="marketing-index.html"><img src="{% static 'img/logoAmarillo.png' %}" alt="logo" width="50px"></a>
+                    <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'img/logoAmarillo.png' %}" alt="logo" width="50px"></a>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'home' %}">INICIO</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'noticias:listar' %}">NOTICIAS</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'evento' %}">Evento</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'galeria' %}">GALERIA</a>
-                            </li>
-                            {% if user.is_authenticated %}
-								<strong class="nav-link">Hola {{ user.username }}</strong>
-								<li class="nav-item">
-									<a class="nav-link" href="{% url 'logout' %}">Cerrar sesion</a>
-								</li>
-							{% else %}
-								<li class="nav-item">
-									<li>
-										<a class="nav-link" href="{% url 'login' %}">Iniciar sesion</a>
-									</li>
-									<li>
-										<a class="nav-link" href="{% url 'usuarios:registro' %}">Registrar</a>
-									</li>
-								</li>	
-							{% endif %}
-
+                            <div class="usuario-1">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'home' %}">INICIO</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'noticias:listar' %}">NOTICIAS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'evento' %}">Evento</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'galeria' %}">GALERIA</a>
+                                </li>
+                            </div>
+                            <div class="usuario">
+                                {% if user.is_authenticated %}
+    								<strong class="nav-link">Hola {{ user.username }}</strong>
+    								<li class="nav-item">
+    									<a class="nav-link" id="margen" href="{% url 'logout' %}">Cerrar sesion</a>
+    								</li>
+    							{% else %}
+    								<li class="nav-item">
+    									<li>
+    										<a class="nav-link" id="margen" href="{% url 'login' %}">Iniciar sesion</a>
+    									</li>
+    									<li>
+    										<a class="nav-link" id="margen" href="{% url 'usuarios:registro' %}">Registrar</a>
+    									</li>
+    								</li>	
+    							{% endif %}
+                            </div>
                         </ul>
-                        <form class="form-inline">
-                            <input class="form-control mr-sm-2" type="text" placeholder="Que buscas?">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-                        </form>
+                        
                     </div>
                 </nav>
             </div><!-- end container-fluid -->

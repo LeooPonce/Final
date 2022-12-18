@@ -12,7 +12,7 @@
 body {
     font-size: 15px;
     line-height: 26px;
-    background-color: #ffffff;
+    background-color: lightgray;
 }
 
 h1,
@@ -271,8 +271,13 @@ h6 {
 }
 
 .page-wrapper {
-    background-color: #ffffff;
+    background-color: #fff;
     padding: 3rem;
+
+}
+
+.page-wrapper .detalle{
+    text-align: center;
 }
 
 .single-post-media {
@@ -341,12 +346,12 @@ a:focus,
 .fa-star,
 .pp a,
 .blog-list-widget small {
-    color: #46C2CB ;
+    color: #fff ;
 }
 
 .market-header .navbar,
 .newsletter-widget.text-center {
-    border-color: #9AB3F5 !important;
+    border-color: rgb(102,157,246)!important;
 }
 
 .color-yellow a,
@@ -357,12 +362,49 @@ a:focus,
 .newsletter-widget,
 .dropdown-item:hover,
 .bg-inverse {
-    color: #46C2CB ;
-    background-color: #9AB3F5 !important;
+    color: #fff ;
+    background-color: rgb(102,157,246) !important;
 }
 
-.registro{
-    padding: 100px; 
+.registro input{
+   position: relative;
+   width: 100%;
+   padding: 10px 0;
+   font-size: 16px;
+   color: #fff;
+   margin-bottom: 30px;
+   border: none;
+   border-bottom: 1px solid #fff;
+   outline: none;
+   background: transparent;
+}
+.registro h3{
+    margin: 0 0 30px;
+   padding: 0;
+   color: #fff;
+   text-align: center;
+   font-size: 30px;
+}
+
+{
+   display: flex;
+   align-content: center;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+}
+
+
+
+.registro {
+   
+   align-content: center;
+   width: 90%;
+   padding: 80px 30px;
+   background: black;
+   box-shadow: 0 15px 25px black;
+   border-radius: 10px;
+   margin:5%;
 }
 
 .Noticia{

@@ -134,6 +134,25 @@ a {
 /* HEADER 
 **************************************/
 
+#margen{
+    margin-right: 5px ;
+    text-align: right !important;
+}
+
+.usuario{
+    display: flex;
+    float: right;
+    justify-items: right;
+    text-align: right !important;
+    margin-right: 5px;
+}
+
+.navbar-nav .usuario-1{
+    display: flex;
+    float: right;
+    justify-items: right;
+}
+
 .header {
     padding: 0.4rem 0;
     position: relative;
@@ -403,6 +422,13 @@ div.tab button:hover {
 /* SECTIONS
 **************************************/
 
+p .imagen{
+    margin-right: 10px;
+}
+
+form p label{
+    color: #fff;
+}
 
 /* GALERIA */
 .container .row .page-wrapper h3{
@@ -411,6 +437,7 @@ div.tab button:hover {
     width: 90%;
     margin: 10px;
 }
+
 
 .container .row .page-wrapper h3::before{
     content: "";
@@ -1478,10 +1505,12 @@ hr.invis3 {
     padding-left: 0.5rem;
 }
 
-.form-wrapper textarea {
-    min-height: 120px !important;
-    padding-top: 1rem
+.page-wrapper textarea {
+    max-height: 80px !important;
+    width: 40%;
 }
+
+
 
 .search-form .form-control {
     border-radius: 0;

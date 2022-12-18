@@ -14,23 +14,14 @@
                     <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
                         <div class="page-wrapper">
                             <div class="blog-custom-build">
-                                <div class="submenu">
-
-                                <a href="{% url 'noticias:listar' %}">TODAS</a>
-                                    {% for cat in categorias %}
-                                    <a href="?id={{cat.pk}}">{{cat.nombre}}</a>
-                                    {% endfor %}
-
-                                </div>
+                                
 
                                 {% for noti in noticias %}
 
-
-
                                 <div class="blog-box wow fadeIn">
                                     <div class="post-media">
-                                        <a href="marketing-single.html" title="">
-                                            <img src="{{noti.imagen.url}}" width="100" height="100">
+                                        <a href=" {% url 'noticias:detalle' noti.pk %} " title="">
+                                            <img src="{{noti.imagen.url}}" width="100%">
                                             <div class="hovereffect">
                                                 <span></span>
                                             </div>
@@ -40,247 +31,46 @@
                                     <!-- end media -->
                                     <div class="blog-meta big-meta text-center">
                                         
-                                        <h4><a href=" {% url 'noticias:detalle' noti.pk %} ">TITULO: {{noti.titulo}}</a></h4>
-                                        <p>CUERPO: {{noti.cuerpo}}</p>
-                                        <small><a href="marketing-category.html" title="">CATEGORIA: {{noti.categoria_noticia}}</a></small>
-                                        <small><a href="marketing-single.html" title="">FECHA: {{noti.fecha}}</a></small>
-                                        <small><a href="#" title="">by Jack</a></small>
-                                        <small><a href="#" title=""><i class="fa fa-eye"></i> 2291</a></small>
+                                        <h4><a href=" {% url 'noticias:detalle' noti.pk %} ">{{noti.titulo}}</a></h4>
+                                        <p>{{noti.breve}}<br><a href=" {% url 'noticias:detalle' noti.pk %} ">Ver más</a></p>
+
+                                        <small><a href="#" title="">Categoria: {{noti.categoria_noticia}}</a></small>
+                                        <small><a href="#" title="">fecha: {{noti.fecha}}</a></small>
+                                       
+                                        
                                     </div><!-- end meta -->
                                 </div><!-- end blog-box -->
 
                                 <hr class="invis">
 
                                   {% endfor %}
-
-
-
-                                <div class="blog-box wow fadeIn">
-                                    <div class="post-media">
-                                        <a href="marketing-single.html" title="">
-                                            <img src="{% static 'upload/market_blog_01.jpg'%}" alt="" class="img-fluid">
-                                            <div class="hovereffect">
-                                                <span></span>
-                                            </div>
-                                            <!-- end hover -->
-                                        </a>
-                                    </div>
-                                    <!-- end media -->
-                                    <div class="blog-meta big-meta text-center">
-                                        
-                                        <h4><a href="marketing-single.html" title=""> Titulo</a></h4>
-                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing, elit. Praesentium nisi eos provident nihil voluptates earum, dicta quidem nobis debitis quas cupiditate rerum temporibus facilis error nostrum, porro, inventore amet aut.</p>
-                                        <small><a href="marketing-category.html" title="">Noticias</a></small>
-                                        <small><a href="marketing-single.html" title="">04 Diciembre, 2022</a></small>
-                                        <small><a href="#" title="">by Jack</a></small>
-                                        <small><a href="#" title=""><i class="fa fa-eye"></i> 2291</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-
-                                <hr class="invis">
-
-                                <div class="blog-box wow fadeIn">
-                                    <div class="post-media">
-                                        <a href="marketing-single.html" title="">
-                                            <img src="{% static 'upload/market_blog_02.jpg'%}" alt="" class="img-fluid">
-                                            <div class="hovereffect">
-                                                <span></span>
-                                            </div>
-                                            <!-- end hover -->
-                                        </a>
-                                    </div>
-                                    <!-- end media -->
-                                    <div class="blog-meta big-meta text-center">
-                                     
-                                        <h4><a href="marketing-single.html" title="">Otro Titulo</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enimcerat elicerat eli nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                        <small><a href="marketing-category.html" title="">Marketing</a></small>
-                                        <small><a href="marketing-single.html" title="">21 July, 2017</a></small>
-                                        <small><a href="#" title="">by Jack</a></small>
-                                        <small><a href="#" title=""><i class="fa fa-eye"></i> 666</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-
-                                <hr class="invis">
-
-                                <div class="blog-box wow fadeIn">
-                                    <div class="post-media">
-                                        <a href="marketing-single.html" title="">
-                                            <img src="{%static 'upload/market_blog_03.jpg'%}" alt="" class="img-fluid">
-                                            <div class="hovereffect">
-                                                <span></span>
-                                            </div>
-                                            <!-- end hover -->
-                                        </a>
-                                    </div>
-                                    <!-- end media -->
-                                    <div class="blog-meta big-meta text-center">
-                                        <h4><a href="marketing-single.html" title="">VAMOS ARGENTINA LOCO!!!1</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enimcerat elicerat eli nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                        <small><a href="marketing-category.html" title="">Technology</a></small>
-                                        <small><a href="marketing-single.html" title="">20 July, 2017</a></small>
-                                        <small><a href="#" title="">by Martin</a></small>
-                                        <small><a href="#" title=""><i class="fa fa-eye"></i> 441</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-
-                                <hr class="invis">
-
-                                <div class="blog-box wow fadeIn">
-                                    <div class="post-media">
-                                        <a href="marketing-single.html" title="">
-                                            <img src="{%static 'upload/market_blog_04.jpg'%}" alt="" class="img-fluid">
-                                            <div class="hovereffect">
-                                                <span></span>
-                                            </div>
-                                            <!-- end hover -->
-                                        </a>
-                                    </div>
-                                    <!-- end media -->
-                                    <div class="blog-meta big-meta text-center">
-                                        <h4><a href="marketing-single.html" title="">EL VIERNES JUEGA!</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enimcerat elicerat eli nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                        <small><a href="marketing-category.html" title="">Technology</a></small>
-                                        <small><a href="marketing-single.html" title="">20 July, 2017</a></small>
-                                        <small><a href="#" title="">by Martin</a></small>
-                                        <small><a href="#" title=""><i class="fa fa-eye"></i> 8934</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-
-                                <hr class="invis">
-
-                                <div class="blog-box wow fadeIn">
-                                    <div class="post-media">
-                                        <a href="marketing-single.html" title="">
-                                            <img src="{%static 'upload/market_blog_05.jpg'%}" alt="" class="img-fluid">
-                                            <div class="hovereffect">
-                                                <span></span>
-                                            </div>
-                                            <!-- end hover -->
-                                        </a>
-                                    </div>
-                                    <!-- end media -->
-                                    <div class="blog-meta big-meta text-center">
-                                        <h4><a href="marketing-single.html" title="">A LAS 16HS</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enimcerat elicerat eli nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                        <small><a href="marketing-category.html" title="">Technology</a></small>
-                                        <small><a href="marketing-single.html" title="">19 July, 2017</a></small>
-                                        <small><a href="#" title="">by Martin</a></small>
-                                        <small><a href="#" title=""><i class="fa fa-eye"></i> 451</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-
-                                <hr class="invis">
-
-                                <div class="blog-box wow fadeIn">
-                                    <div class="post-media">
-                                        <a href="marketing-single.html" title="">
-                                            <img src="{%static 'upload/market_blog_06.jpg'%}" alt="" class="img-fluid">
-                                            <div class="hovereffect">
-                                                <span></span>
-                                            </div>
-                                            <!-- end hover -->
-                                        </a>
-                                    </div>
-                                    <!-- end media -->
-                                    <div class="blog-meta big-meta text-center">
-                                        <h4><a href="marketing-single.html" title="">VAMO VAMO ARGENTINA</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enimcerat elicerat eli nibh, maximus ac felis nec, maximus tempor odio.</p>
-                                        <small><a href="marketing-category.html" title="">Technology</a></small>
-                                        <small><a href="marketing-single.html" title="">19 July, 2017</a></small>
-                                        <small><a href="#" title="">by Martin</a></small>
-                                        <small><a href="#" title=""><i class="fa fa-eye"></i> 192</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
+          
                             </div>
                         </div>
-
-                        <hr class="invis">
-
-                        <div class="row">
-                            <div class="col-md-12">
-                                <nav aria-label="Page navigation">
-                                    <ul class="pagination justify-content-center">
-                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">Next</a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div><!-- end col -->
-                        </div><!-- end row -->
                     </div><!-- end col -->
 
                    
                     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-                        <div class="sidebar">
-                            
-                             <div id="" class="widget">
+                        <div class="sidebar">                            
+                             <div class="widget">
                                 <h2 class="widget-title">Anuncios</h2>
                                 <h3>PROXIMAMENTE</h3>
                                 <div class="banner-spot clearfix">
                                     <div class="banner-img">
-                                        <a href="https://www.facebook.com/EscultoresenelImpenetrable/"><img src="{% static 'img/evento2023.jpg' %}" alt="" class="img-fluid"></a>
+                                        <a href="https://www.facebook.com/EscultoresenelImpenetrable/" target="_blank"><img src="{% static 'img/evento2023.jpg' %}" alt="" class="img-fluid"></a>
                                     </div><!-- end banner-img -->
                                 </div><!-- end banner -->
                             </div><!-- end widget -->
                                                          
                             <div class="widget">
-                                <h2 class="widget-title">Publicaciones recientes</h2>
-                                <div class="blog-list-widget">
-                                    <div class="list-group">
-                                        <a href="marketing-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                                            <div class="w-100 justify-content-between">
-                                                <img src="{%static 'upload/small_07.jpg'%}" alt="" class="img-fluid float-left">
-                                                <h5 class="mb-1">Noticia 1</h5>
-                                                <small>06 Dic, 2022</small>
-                                            </div>
-                                        </a>
-
-                                        <a href="marketing-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                                            <div class="w-100 justify-content-between">
-                                                <img src="{%static 'upload/small_08.jpg'%}" alt="" class="img-fluid float-left">
-                                                <h5 class="mb-1">Noticia 2</h5>
-                                                <small>06 Dic, 2022</small>
-                                            </div>
-                                        </a>
-
-                                        <a href="marketing-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                                            <div class="w-100 last-item justify-content-between">
-                                                <img src="{%static 'upload/small_09.jpg'%}" alt="" class="img-fluid float-left">
-                                                <h5 class="mb-1">Noticia 3</h5>
-                                                <small>06 Dic, 2022</small>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div><!-- end blog-list -->
-                            </div><!-- end widget -->
-
-                            <div class="widget">
-                                <h2 class="widget-title">Instagram</h2>
-                                <div class="instagram-wrapper clearfix">
-                                    <a class="" href="#"><img src="{%static 'upload/small_09.jpg' %}" alt="" class="img-fluid"></a>
-                                    <a href="#"><img src="{%static 'upload/small_01.jpg' %}" alt="" class="img-fluid"></a>
-                                    <a href="#"><img src="{%static 'upload/small_02.jpg' %}" alt="" class="img-fluid"></a>
-                                    <a href="#"><img src="{%static 'upload/small_03.jpg' %}" alt="" class="img-fluid"></a>
-                                    <a href="#"><img src="{%static 'upload/small_04.jpg' %}" alt="" class="img-fluid"></a>
-                                    <a href="#"><img src="{%static 'upload/small_05.jpg' %}" alt="" class="img-fluid"></a>
-                                    <a href="#"><img src="{%static 'upload/small_06.jpg' %}" alt="" class="img-fluid"></a>
-                                    <a href="#"><img src="{%static 'upload/small_07.jpg' %}" alt="" class="img-fluid"></a>
-                                    <a href="#"><img src="{%static 'upload/small_08.jpg' %}" alt="" class="img-fluid"></a>
-                                </div><!-- end Instagram wrapper -->
-                            </div><!-- end widget -->
-
-                            <div class="widget">
-                                <h2 class="widget-title">Categorias populares</h2>
+                                <h2 class="widget-title">Categorias</h2>
                                 <div class="link-widget">
                                     <ul>
-                                        <li><a href="#">Eventos<span>(21)</span></a></li>                                        
-                                        <li><a href="#">Impenetrable <span>(31)</span></a></li>                                       
-                                        <li><a href="#">Chaco <span>(25)</span></a></li>                                        
-                                        <li><a href="#">Bienal <span>(37)</span></a></li>
+                                        <li><a href="{% url 'noticias:listar' %}">TODAS</a></li>                                        
+                                        {% for cat in categorias %}
+                                        <li><a href="?id={{cat.pk}}">{{cat.nombre}}</a></li>
+                                        {% endfor %}
+                                                                                
                                     </ul>
                                 </div><!-- end link-widget -->
                             </div><!-- end widget -->
