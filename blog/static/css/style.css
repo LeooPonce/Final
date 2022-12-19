@@ -462,12 +462,14 @@ form p label{
     width: 100%;
     cursor: pointer;
     transition: 1s;
+    border-radius: 15px;
 }
 
 
 
 .container .row .page-wrapper .img-gallery .card{
     transition: 1s;
+    border-radius: 15px;
 }
 .container .row .page-wrapper .img-gallery .card:hover{
     transform: scale(1.2);

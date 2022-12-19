@@ -20,7 +20,7 @@
             <br><br><br>
             <form method="POST" action="{% url 'noticias:comentar' %}">{% csrf_token %}
                 <fieldset>
-                    <legend><b>Dejanos tu opinion!</b></legend>
+                    <legend><b> Tu opinión nos importa, ¡déjanos un comentario!</b></legend>
                     <textarea name="comentario" maxlength="1500"> </textarea>
                     <input type="text" name="id_noticia" value="{{noticia.pk}}" hidden=""><br>
                     <input type="submit" value="Comentar">
