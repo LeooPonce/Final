@@ -32,7 +32,9 @@
                                     <div class="blog-meta big-meta text-center">
                                         
                                         <h4><a href=" {% url 'noticias:detalle' noti.pk %} ">{{noti.titulo}}</a></h4>
-                                        <p>{{noti.breve}}<br><a href=" {% url 'noticias:detalle' noti.pk %} ">Ver más</a></p>
+                                        <p>{{noti.breve}}<br>
+                                            <button><a href=" {% url 'noticias:detalle' noti.pk %} ">Ver más</a></button>
+                                        </p>
 
                                         <small><a href="#" title="">Categoria: {{noti.categoria_noticia}}</a></small>
                                         <small><a href="#" title="">fecha: {{noti.fecha}}</a></small>

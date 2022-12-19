@@ -30,12 +30,14 @@
             <h3>COMENTARIOS</h3>
             {% for com in comentarios %}
             <div class="comentario">
-            <p><strong>Usuario:</strong> {{com.usuario}}<br>
-            <strong>Comentario:</strong> {{com.texto}}<br>
-            <small><strong>Fecha:</strong> {{com.fecha}}</small></p>
+                <p><strong>Usuario:</strong> {{com.usuario}}<br>
+                <strong>Comentario:</strong> {{com.texto}}<br>
+                <small><strong>Fecha:</strong> {{com.fecha}}</small></p>
             </div>
             {% endfor %}
-            <a href="{% url 'noticias:listar' %}"><b>VOLVER</b></a>
+            <div class="volver">
+                <button><a href="{% url 'noticias:listar' %}"><b>VOLVER</b></a></button>
+            </div>
          </div>
          </div>
     </div>
